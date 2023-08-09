@@ -1,8 +1,9 @@
 <?php require __DIR__ . "/../settings/databases/admins_auth.php"; ?>
 <?php require "../layout/header.php"; ?>
 <?php
-if (isset($_SESSION["admin_name"])) {
+if (isset($_SESSION["admin_id"])) {
     header("Location: http://localhost/CMS/admin-panel/index.php");
+    exit;
 } else if (isset($_POST["submit"])) {
     if (isset($_POST["email"]) && isset($_POST["password"])) {
         $adminDB->login($_POST["email"], $_POST["password"]);

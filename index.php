@@ -6,6 +6,7 @@ $allCategories = $postsDB->get_categries();
 ?>
 <?php if (!isset($_SESSION["username"])) {
     header("Location: http://localhost/CMS/auth/login.php");
+    exit();
 } ?>
 <!-- Page Header-->
 <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">

@@ -23,14 +23,16 @@ $allCategories = $categoriesDB->get_categries();
                         </thead>
                         <tbody>
                             <?php foreach ($allCategories as $category) : ?>
-                                <tr>
-                                    <th scope="row"><?php echo $category->id ?></th>
-                                    <td><?php echo $category->name ?> </td>
-                                    <td><a href="update-category.php?upd_id=<?php echo $category->id ?>" class="btn btn-warning text-white text-center ">Update
-                                            Categories</a></td>
-                                    <td><a href="delete-category.php?del_id=<?php echo $category->id ?>" class="btn btn-danger  text-center ">Delete
-                                            Categories</a></td>
-                                </tr>
+                            <tr>
+                                <th scope="row"><?php echo $category->id ?></th>
+                                <td><?php echo $category->name ?> </td>
+                                <td><a href="update-category.php?upd_id=<?php echo $category->id ?>"
+                                        class="btn btn-warning text-white text-center ">Update
+                                        Categories</a></td>
+                                <td><a href="delete-category.php?del_id=<?php echo $category->id ?>"
+                                        class="btn btn-danger  text-center ">Delete
+                                        Categories</a></td>
+                            </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>

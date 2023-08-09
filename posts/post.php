@@ -7,7 +7,10 @@ if (isset($_GET["post_id"])) {
         $postsDB->create_comment($_POST["comment"], $_GET["c_comment_id"], $post->title);
     }
     $comments = $postsDB->get_comments($_GET["post_id"]);
+} else {
+    header("Location: ../404.php");
 }
+
 ?>
 
 <!-- Page Header-->
@@ -61,19 +64,17 @@ if (isset($_GET["post_id"])) {
 
                 <div class="card">
                     <div class="card-body">
-
                         <?php foreach ($comments as $comment) : ?>
                             <div class="d-flex flex-start align-items-center">
-
                                 <div>
-                                    <h6 class="fw-bold text-primary"><?php echo $comment->username ?><h8 class="p-3 text-black">
-                                            (<?php echo date("M Y", strtotime($comment->created_at)) ?>)
-                                        </h8>
+                                    <h6 class="fw-bold text-primary">
+                                        <?php echo $comment->username ?>
                                     </h6>
-
+                                    <h8 class="p-3 text-black">
+                                        (<?php echo date("M Y", strtotime($comment->created_at)) ?>)
+                                    </h8>
                                 </div>
                             </div>
-
                             <p class="mt-3 mb-4 pb-2">
                                 <?php echo $comment->comment ?>
                             </p>
